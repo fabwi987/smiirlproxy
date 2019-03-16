@@ -4,6 +4,7 @@ from flask import (
     jsonify, 
     request
 )
+from gevent.pywsgi import WSGIServer
 
 CONST_MAX_VALUE = 99999
 CONST_MIN_VALUE = 0
@@ -44,4 +45,8 @@ def validInput(incoming_value):
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    #Debug/development
+    #app.run(debug=True, host='0.0.0.0', port=5000)
+    #Production
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
