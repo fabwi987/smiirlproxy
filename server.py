@@ -18,7 +18,7 @@ app = Flask(__name__, template_folder="templates")
 def home():
     global value
     number = {
-        "Number": value
+        "number": value
     }
     return jsonify(number)
 
@@ -47,6 +47,6 @@ def validInput(incoming_value):
 if __name__ == '__main__':
     #Debug/development
     #app.run(debug=True, host='0.0.0.0', port=5000)
-    #Production
-    http_server = WSGIServer(('', 5000), app)
+    #Production 
+    http_server = WSGIServer(('', 80), app)
     http_server.serve_forever()
