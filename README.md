@@ -1,6 +1,6 @@
 # smiirlproxy
 Small webserver that that acts as a middleman between a smiirl and any other system.
-Trigger the 'callback' URL in your system to increase the counter by one. There is also the option of setting the counter to a specifik value.
+Trigger the 'callback' URL in your system to increase the counter by one. There is also the option of setting the counter to a specific value.
 
 ## URL route that displays the value in json format: {'number': value}
 @app.route('/')
