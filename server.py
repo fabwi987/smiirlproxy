@@ -34,10 +34,11 @@ def se():
     return "Value updated"  
 
 # URL route for increasing the value by one
-@app.route('/callback')
-def increase():
+@app.route('/callback/')
+@app.route('/callback/<path:path>')
+def increase(path=None):
     global value
-    value = value + 1
+    value = int(value) + 1
     return "Registered"
 
 def validInput(incoming_value):
